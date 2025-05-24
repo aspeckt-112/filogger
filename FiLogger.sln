@@ -1,8 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D29A5B89-C505-47F3-A761-6470973348B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FB23A140-8CA0-49BD-9424-322D48E12139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiLogger", "src\FiLogger\FiLogger.csproj", "{3B704BAA-92D7-45F0-B8DF-71EEBA58CE96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiLoggerConsoleTest", "samples\FiLoggerConsoleTest\FiLoggerConsoleTest.csproj", "{2095C153-6481-459F-9F7C-F58BF810C046}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B704BAA-92D7-45F0-B8DF-71EEBA58CE96} = {D29A5B89-C505-47F3-A761-6470973348B0}
+		{2095C153-6481-459F-9F7C-F58BF810C046} = {FB23A140-8CA0-49BD-9424-322D48E12139}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B704BAA-92D7-45F0-B8DF-71EEBA58CE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B704BAA-92D7-45F0-B8DF-71EEBA58CE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B704BAA-92D7-45F0-B8DF-71EEBA58CE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B704BAA-92D7-45F0-B8DF-71EEBA58CE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2095C153-6481-459F-9F7C-F58BF810C046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2095C153-6481-459F-9F7C-F58BF810C046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2095C153-6481-459F-9F7C-F58BF810C046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2095C153-6481-459F-9F7C-F58BF810C046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
