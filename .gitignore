@@ -402,3 +402,6 @@ FodyWeavers.xsd
 !.idea/codeStyles
 !.idea/runConfigurations
 !.idea/inspectionProfiles
+
+# Docker
+.env
