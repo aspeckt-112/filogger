@@ -73,7 +73,7 @@ public class FiLoggerProvider : ILoggerProvider
         };
     }
 
-    public ILogger CreateLogger(string categoryName) => new FiLogger(categoryName, this);
+    public ILogger CreateLogger(string categoryName) => new FiLoggerImmediateFlush(categoryName, this);
 
     public bool TryWrite(string message) => _channel.Writer.TryWrite(message);
     
