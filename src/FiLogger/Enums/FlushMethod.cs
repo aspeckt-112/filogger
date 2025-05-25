@@ -1,4 +1,4 @@
-namespace FiLogger;
+namespace FiLogger.Enums;
 
 public enum FlushMethod
 {

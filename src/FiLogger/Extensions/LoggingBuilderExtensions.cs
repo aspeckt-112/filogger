@@ -1,6 +1,8 @@
+using FiLogger.Options;
+
 using Microsoft.Extensions.Logging;
 
-namespace FiLogger;
+namespace FiLogger.Extensions;
 
 public static class LoggingBuilderExtensions
 {
@@ -18,6 +20,10 @@ public static class LoggingBuilderExtensions
         FiLoggerOptions options,
         LogLevel minLogLevel = LogLevel.Information)
     {
+        ArgumentException.ThrowIfNullOrEmpty(filePath);
+        ArgumentNullException.ThrowIfNull(options);
+        minLogLevel.ThrowIfOutOfRange();
+
         builder.AddProvider(new FiLoggerProvider(filePath, options, minLogLevel));
 
         return builder;

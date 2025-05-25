@@ -1,14 +1,15 @@
 using FiLogger.Integration.Tests.Fixtures;
+using FiLogger.Options;
 
 using Microsoft.Extensions.Logging;
 
 namespace FiLogger.Integration.Tests.Tests;
 
-public abstract class BaseFiLoggerTest : IDisposable
+public abstract class BaseTest
 {
     private readonly string _testFilePath = Path.Combine(Path.GetTempPath(), "FiLogger", $"{Path.GetRandomFileName()}.log");
 
-    protected BaseFiLoggerTest(FiLoggerOptions options, FiLoggerFixture fixture)
+    protected BaseTest(FiLoggerOptions options, FiLoggerFixture fixture)
     {
         Provider = new FiLoggerProvider(_testFilePath, options, LogLevel.Debug);
         fixture.AddLogFile(_testFilePath);
@@ -17,9 +18,4 @@ public abstract class BaseFiLoggerTest : IDisposable
     protected FiLoggerProvider Provider { get; }
 
     protected async Task<string[]> ReadLogLines() => await File.ReadAllLinesAsync(_testFilePath);
-
-    public void Dispose()
-    {
-        Provider.Dispose();
-    }
 }

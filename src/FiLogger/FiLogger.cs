@@ -2,12 +2,12 @@ using Microsoft.Extensions.Logging;
 
 namespace FiLogger;
 
-public class FiLoggerImmediateFlush : ILogger
+public sealed class FiLogger : ILogger
 {
     private readonly string _category;
     private readonly FiLoggerProvider _provider;
 
-    public FiLoggerImmediateFlush(string category, FiLoggerProvider provider)
+    public FiLogger(string category, FiLoggerProvider provider)
     {
         _category = category;
         _provider = provider;
@@ -43,6 +43,6 @@ public class FiLoggerImmediateFlush : ILogger
             logLine += Environment.NewLine + exception;
         }
 
-        _provider.TryWrite(logLine);
+        _provider.Write(logLine);
     }
 }
